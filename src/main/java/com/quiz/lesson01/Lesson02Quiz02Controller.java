@@ -18,7 +18,7 @@ public class Lesson02Quiz02Controller {
 
 	//JSON 출력 (List, Map)
 	@RequestMapping("/1")
-	public List<Map<String, Object>> quiz0201(){
+	public List<Map<String, Object>> quiz02_01(){
 		List<Map<String,Object>> list= new ArrayList<>();
 		
 		Map<String,Object> map=new HashMap<String,Object>(){
@@ -41,7 +41,7 @@ public class Lesson02Quiz02Controller {
 		};
 		list.add(map);
 		
-		map = new HashMap<>() {
+		map = new HashMap<String,Object>() {
 			{
 			  put("rate",12);
 			  put("director","크리스토퍼 놀란");
@@ -51,7 +51,7 @@ public class Lesson02Quiz02Controller {
 		};
 		list.add(map);
 		
-		map = new HashMap<>() {
+		map = new HashMap<String,Object>() {
 			{
 			  put("rate",19);
 			  put("director","윤종빈");
@@ -75,7 +75,7 @@ public class Lesson02Quiz02Controller {
 	}
 	
 	@RequestMapping("/2")
-	public List<Lesson02Quiz02Data> quiz0202(){
+	public List<Lesson02Quiz02Data> quiz02_02(){
 		List<Lesson02Quiz02Data> list=new ArrayList<>();
 		Lesson02Quiz02Data data= new Lesson02Quiz02Data();
 		data.setTitle("안녕하세요 가입인사 드립니다.");
@@ -100,7 +100,7 @@ public class Lesson02Quiz02Controller {
 	
 	
 	@RequestMapping("/3")
-	public ResponseEntity<Lesson02Quiz02Data> quiz0203(){
+	public ResponseEntity<Lesson02Quiz02Data> quiz02_03(){
 		Lesson02Quiz02Data data = new Lesson02Quiz02Data();
 		data.setTitle("안녕하세요 가입인사 드립니다.");
 		data.setUser("hagulu");
