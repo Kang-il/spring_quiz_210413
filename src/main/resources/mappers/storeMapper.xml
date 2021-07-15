@@ -8,6 +8,5 @@
  			*
  		FROM
  			`store`
- 	
  	</select>
  </mapper>
