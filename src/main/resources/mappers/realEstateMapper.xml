@@ -61,5 +61,53 @@
 	    ORDER BY `id` DESC <!-- 등록일과 아이디랑 일맥상통 -->
  	</select>
  	
+ 	<insert id="insertRealEstate" parameterType="com.quiz.mybatis_select_quiz01.model.RealEstate">
+ 		INSERT INTO `real_estate`
+ 		(
+ 			`realtorId`
+ 			,`address`
+ 			,`area`
+ 			,`type`
+ 			,`price`
+ 			,`rentPrice`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		)VALUES
+ 		(
+ 			#{realtorId}
+ 			,#{address}
+ 			,#{area}
+ 			,#{type}
+ 			,#{price}
+ 			,#{rentPrice}
+ 			,NOW()
+ 			,NOW()
+ 		)
+ 	</insert>
+ 	
+ 	<insert id="insertRealEstateAsField" parameterType="map">
+ 		INSERT INTO `real_estate`
+ 		(
+ 			`realtorId`
+ 			,`address`
+ 			,`area`
+ 			,`type`
+ 			,`price`
+ 			,`rentPrice`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		)VALUES
+ 		(
+ 			#{realtorId}
+ 			,#{address}
+ 			,#{area}
+ 			,#{type}
+ 			,#{price}
+ 			,#{rentPrice}
+ 			,NOW()
+ 			,NOW()
+ 		)
+ 	</insert>
+ 
  </mapper>
  

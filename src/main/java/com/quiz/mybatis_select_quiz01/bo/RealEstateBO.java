@@ -25,4 +25,14 @@ public class RealEstateBO {
 	public List<RealEstate> getRealEstateListByAreaAndPrice(int area,int price){
 		return realEstateDAO.selectRealEstateListByAreaAndPrice(area, price);
 	}
+	
+	
+	public int insertRealEstate(RealEstate realEstate) {
+		return realEstateDAO.insertRealEstate(realEstate);
+	}
+	public int inserRealEstateAsField(Integer realtorId,String address, int area, String type, int price, Integer rentPrice) {
+		return realEstateDAO.insertRealEstateAsField(realtorId, address, area, type, price, rentPrice);
+	}
+
+	
 }
