@@ -11,7 +11,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @MapperScan(basePackages = "com.quiz")
-@Configuration
+@Configuration // 설정을 위한 spring bean으로 등록 -- 서버가 켜지는 즉시 읽혀지는 코드
 public class DatabaseConfig {
 
 	@Bean
