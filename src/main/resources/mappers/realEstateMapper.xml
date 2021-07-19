@@ -20,7 +20,7 @@
  			id=#{id}
  	</select>
  	
- 	<select id="selectRealEstateListAsRentPrice" parameterType="Integer" resultType="com.quiz.mybatis_select_quiz01.model.RealEstate">
+ 	<select id="selectRealEstateListByRentPrice" parameterType="Integer" resultType="com.quiz.mybatis_select_quiz01.model.RealEstate">
  		SELECT
  			`id`
  			,`realtorId`
@@ -35,11 +35,11 @@
  			`real_estate`
  		WHERE
 	 		<![CDATA[
-	        `rentPrice`< #{rentPrice}
+	        `rentPrice`<= #{rentPrice}
 	        ]]>
  	</select>
  	
- 	<select id="selectRealEstateListAsAreaAndPrice" parameterType="map" resultType="com.quiz.mybatis_select_quiz01.model.RealEstate">
+ 	<select id="selectRealEstateListByAreaAndPrice" parameterType="map" resultType="com.quiz.mybatis_select_quiz01.model.RealEstate">
  		SELECT
  			`id`
  			,`realtorId`
@@ -53,10 +53,12 @@
  		FROM
  			`real_estate`
  		WHERE
+ 			`type`='매매'
 	 		<![CDATA[
-	        `area` >= #{area}
-	        && `price` <= #{price}
+	        AND `area` >= #{area}
+	        AND `price` <= #{price}
 	        ]]>
+	    ORDER BY `id` DESC <!-- 등록일과 아이디랑 일맥상통 -->
  	</select>
  	
  </mapper>

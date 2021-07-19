@@ -18,11 +18,11 @@ public class RealEstateBO {
 		return realEstateDAO.selectRealEstate(id);
 	}
 	
-	public List<RealEstate> getRealEstateRentPriceList(Integer rentPrice){
-		return realEstateDAO.selectRealEstateListAsRentPrice(rentPrice);
+	public List<RealEstate> getRealEstateListByRentPrice(Integer rentPrice){
+		return realEstateDAO.selectRealEstateListByRentPrice(rentPrice);
 	}
 	
-	public List<RealEstate> getRealEstateListAsAreaAndPrice(int area,int price){
-		return realEstateDAO.selectRealEstateListAsAreaAndPrice(area, price);
+	public List<RealEstate> getRealEstateListByAreaAndPrice(int area,int price){
+		return realEstateDAO.selectRealEstateListByAreaAndPrice(area, price);
 	}
 }
