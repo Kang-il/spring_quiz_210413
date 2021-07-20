@@ -17,6 +17,8 @@ public class RealEstateController {
 	@Autowired
 	private RealEstateBO realEstateBO;
 	
+	
+	//####### QUIZ01 SELECT
 	@RequestMapping("/quiz01/1") //id로 select 하기 (1개)
 	public RealEstate quiz01(@RequestParam(value="id") int id ) {//@RequestParam -- request로 들어온 Anotation 
 		//request / response
@@ -36,6 +38,10 @@ public class RealEstateController {
 		return realEstateBO.getRealEstateListByAreaAndPrice(area, price);
 	}
 	
+	
+	//####### QUIZ02 INSERT
+	
+	//요청 URL : http://localhost/lesson03/quiz02/1
 	@RequestMapping("/quiz02/1")
 	public String quiz02_1() {
 		RealEstate realEstate=new RealEstate();
@@ -50,16 +56,38 @@ public class RealEstateController {
 		return "입력성공 :" +row;
 	}
 
+	//요청 URL : http://localhost/lesson03/quiz02/2?realtor_id=5
 	@RequestMapping("/quiz02/2")
-	public String quiz02_2(@RequestParam(value="realtor_id",required=true)Integer realtorId) {
+	public String quiz02_2(
+			@RequestParam(value="realtor_id",required=true) Integer realtorId ) {
 		int row = realEstateBO.inserRealEstateAsField(realtorId, "썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120);
 		
 		return "입력성공 :" + row;
 	}
 	
 	
+	//####### QUIZ03 UPDATE
+	
+	//요청 URL : http://localhost/lesson03/quiz03/1?id=8
+	@RequestMapping("/quiz03/1")
+	public String quiz03(
+			@RequestParam(value="id",required=true) Integer id
+			,@RequestParam(value="type",required=true) String type
+			,@RequestParam(value="type",required=true) int price
+			) {
+		int row = realEstateBO.updateRealEstateById(id,type,price);
+		return "수행 성공 : " + row ;
+	}
 
 	
+	//####### QUIZ04 DELETE
+	
+	//요청 URL : http://localhost/lesson03/quiz04/1?id=21
+	@RequestMapping("/quiz04/1")
+	public String quiz04(@RequestParam(value="id",required=true) Integer id) {
+		int row=realEstateBO.deleteRealEstateById(id);
+		return "삭제 성공" + row;
+	}
 	
 	
 }

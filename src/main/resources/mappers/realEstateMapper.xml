@@ -61,6 +61,7 @@
 	    ORDER BY `id` DESC <!-- 등록일과 아이디랑 일맥상통 -->
  	</select>
  	
+ 	<!-- QUIZ02 INSERT QUERY -->
  	<insert id="insertRealEstate" parameterType="com.quiz.mybatis_select_quiz01.model.RealEstate">
  		INSERT INTO `real_estate`
  		(
@@ -109,5 +110,27 @@
  		)
  	</insert>
  
+ 	
+ 	<!-- QUIZ03 UPDATE QUERY -->
+ 	<update id="updateRealEstate" parameterType="map">
+ 		UPDATE 
+ 			`real_estate`
+ 		SET
+ 			`type` = #{type}
+ 			,`price` = #{price}
+ 			,`updatedAt`= NOW()
+ 		WHERE
+ 			`id`=#{id}
+ 	</update>
+ 
+ 	<!-- QUIZ04 DELETE QUERY -->
+ 	<delete id="deleteRealEstateById" parameterType="Integer">
+ 		DELETE
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			`id`=#{id}
+ 	</delete>
+ 	
  </mapper>
  

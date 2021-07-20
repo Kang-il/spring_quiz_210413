@@ -14,6 +14,7 @@ public class RealEstateBO {
 	@Autowired
 	private RealEstateDAO realEstateDAO;
 	
+	//####### QUIZ01 SELECT
 	public RealEstate getRealEstate(int id) {
 		return realEstateDAO.selectRealEstate(id);
 	}
@@ -27,6 +28,7 @@ public class RealEstateBO {
 	}
 	
 	
+	//####### QUIZ02 INSERT
 	public int insertRealEstate(RealEstate realEstate) {
 		return realEstateDAO.insertRealEstate(realEstate);
 	}
@@ -34,5 +36,15 @@ public class RealEstateBO {
 		return realEstateDAO.insertRealEstateAsField(realtorId, address, area, type, price, rentPrice);
 	}
 
+	
+	//####### QUIZ03 UPDATE
+	public int updateRealEstateById(Integer id, String type,int price) {
+		return realEstateDAO.updateRealEstateById(id,type,price);
+	}
+	
+	//####### QUIZ04 DELETE
+	public int deleteRealEstateById(Integer id) {
+		return realEstateDAO.deleteRealEstateById(id); 
+	}
 	
 }
