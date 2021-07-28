@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+#wrap{
+	width:1000px;
+	margin:auto;
+}
+.section{
+		
+}
+.section .navbar{
+	background-color:#6783D9;
+	width:200px;
+}
+.section-item01{
+	width:800px;
+}
+
+.insert-item{ width:250px; margin:0px;}
+.large-box{width:800px;}
+
+
+.navbar .logo{text-decoration: none;}
+.navbar a:hover{text-decoration:none;}
+
+footer{
+	width:1000px;
+	height:120px;
+}
+
+footer .footer-info{font-size: 13px;}
