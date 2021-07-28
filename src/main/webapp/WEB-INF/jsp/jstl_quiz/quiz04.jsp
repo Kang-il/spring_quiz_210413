@@ -42,7 +42,7 @@
 						
 						<c:choose>
 							
-							<c:when test="${fn:substring(member.phoneNumber,0,3) eq '010'}">
+							<c:when test="${fn:startsWith(member.phoneNumber,'010')}">
 								<td>${member.phoneNumber}</td>
 							</c:when>
 								
@@ -59,15 +59,16 @@
 						<td><b>${email[0]}</b>@${email[1]}</td>
 						
 						<%--15자가 넘어갈 경우 뒤에 '...'표시 --%>
-						<c:choose>
-							<c:when test="${fn:length(member.introduce) >= 16 }">
-								<td>${fn:substring(member.introduce,0,15)}...</td>
-							</c:when>
-							<c:otherwise>
-								<td>${member.introduce}</td>
-							</c:otherwise>
-						</c:choose>
-						
+						<td class="text-left">
+							<c:choose>
+								<c:when test="${fn:length(member.introduce) >= 16 }">
+									${fn:substring(member.introduce,0,15)}...
+								</c:when>
+								<c:otherwise>
+									${member.introduce}
+								</c:otherwise>
+							</c:choose>
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
