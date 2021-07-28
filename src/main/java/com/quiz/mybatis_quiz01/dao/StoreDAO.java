@@ -9,4 +9,5 @@ import com.quiz.mybatis_quiz01.model.Store;
 @Repository
 public interface StoreDAO {
 	public List<Store> selectStoreList();
+	public Store selectStoreById(int id);
 }

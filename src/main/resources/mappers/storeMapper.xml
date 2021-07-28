@@ -5,8 +5,31 @@
  <mapper namespace="com.quiz.mybatis_quiz01.dao.StoreDAO">
  	<select id="selectStoreList" resultType="com.quiz.mybatis_quiz01.model.Store">
  		SELECT
- 			*
+ 			`id`
+ 			,`store`
+ 			,`phoneNumber`
+ 			,`address`
+ 			,`businessNumber`
+ 			,`introduce`
+ 			,`createdAt`
+ 			,`updatedAt`
  		FROM
  			`store`
+ 	</select>
+ 	
+ 	<select id="selectStoreById" parameterType="int" resultType="com.quiz.mybatis_quiz01.model.Store">
+ 		SELECT
+ 			`id`
+ 			,`store`
+ 			,`phoneNumber`
+ 			,`address`
+ 			,`businessNumber`
+ 			,`introduce`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`store`
+ 		WHERE
+ 			`id`=#{id}
  	</select>
  </mapper>

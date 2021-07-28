@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+#wrap{
+	width:600px;
+	margin:auto;
+}
+
+.header{
+	height:80px;
+	background-color: #12a3b8;
+}
+.header a:hover{text-decoration: none;}
+
+
+.section .item-box .item{border:1px solid #12a3b8; border-radius:5px; width:600px; }
+.section .item-box .item a{color:black;}
+.section .item-box .item:hover{background-color:#d3e4e6 }
+.section .item-box .item .menu-name-tag{background-color:#c5ebf0; border-radius:3px; margin-bottom:3px;}
+
+.footer{
+	height:100px;
+}
