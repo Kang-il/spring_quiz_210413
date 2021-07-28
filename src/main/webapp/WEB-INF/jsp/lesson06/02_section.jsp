@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<section class="section-item01 m-3">
+<section class="section-item01">
 
 	<%-- 절차 : View[navbar(item)파라미터 값] -> Controller[model.addAttribute()] -> View --%>
 	<c:choose>

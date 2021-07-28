@@ -7,8 +7,9 @@
 <%--weatherList : DB에서 받아온 날씨 리스트 넘어옴 --%>
 <%--subject : 해당 뷰의 타이틀 --%>
 
-<h3 class="my-3 font-weight-bold">${subject}</h3>
-<table class="table text-center">
+<div class="d-block">
+<h3 class="mb-3 mt-4 ml-3 font-weight-bold">${subject}</h3>
+<table class="table text-center mx-3">
 	<thead>
 		<tr>
 			<th>날짜</th>
@@ -65,3 +66,4 @@
 		
 	</tbody>
 </table>
+</div>
