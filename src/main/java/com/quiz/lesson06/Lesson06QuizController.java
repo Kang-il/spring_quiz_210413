@@ -47,8 +47,10 @@ public class Lesson06QuizController {
 		
 		//section item에 무엇을 띄워줄지 결정하는 메서드 (초기화면으로 돌아갈 수 있도록 menu매개변수에 null을 넣어준다.)
 		insertsectionItem(model,null);
-
-		return "lesson06/00_template";
+		
+		//redirect :::: 새로운 request 하는 것과 같으므로 RequestMapping에 있는 path를 써준다.
+		return "redirect:/lesson06/quiz/weather_history";
+		//return "lesson06/00_template";
 	}
 	
 	

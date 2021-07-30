@@ -13,6 +13,7 @@
 <%-- css image js => static 정적 CDN 서버 --%>
 <link rel="stylesheet" type="text/css" href="/css/lesson07/lesson07Style.css?${currentTime}"/>
 
+<script src="/js/lesson07/store.js?${currentTime}" type="text/javascript"></script>
 </head>
 <body>
 	<div id="wrap">

@@ -9,7 +9,7 @@
       	});
       	
       	$('#submit').on('click',function(e){
-    		e.preventDefault();
+    		
     		//유효성 검사
     		//weather,microDust select 이므로 기본적으로 값이 들어감
     		var date=$('input[name=date]').val();
@@ -22,29 +22,28 @@
     		
     		if(date==""){
     			alert('날짜를 입력하세요');
-    			
+    			e.preventDefault();
     			return;
     		}
     		
     		if(temperatures==""){
     			alert('온도를 입력하세요');
-    			
+    			e.preventDefault();
     			return;
     		}
     		
     		if(precipitation==""){
     			alert('강수량을 입력하세요');
-    			
+    			e.preventDefault();
     			return;
     		}
     		
     		if(windSpeed==""){
     			alert('풍속을 입력하세요');
-    			
+    			e.preventDefault();
     			return;
     		}
-    		
-    		alert('저장 했습니다.');
+    		return;
     	});
 
     });

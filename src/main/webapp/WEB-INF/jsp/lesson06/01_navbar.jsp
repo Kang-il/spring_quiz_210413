@@ -5,7 +5,7 @@
 <nav class="navbar d-block">
 
 	<%--logo부분 ::: 클릭 시 처음 페이지로 이동--%>
-	<div class="d-flex aligh-items-center justify-content-center">
+	<div class="d-flex align-items-center justify-content-center">
 		<a href="/lesson06/quiz/weather_history" class="logo ml-0 mt-3">
 			<img src="/images/lesson06/logo.png" width="50px" alt="로고이미지"/>
 			<span class="h5 text-white font-weight-bold text-decoration-none mr-3">기상청</span>
