@@ -33,12 +33,12 @@
 			<input type="text" class="form-control" name="name"/>
 			<span>주소</span>
 			<input type="text" class="form-control" name="url"/>
-			<button class="form-control bg-success" id="submitBtn">추가</button>
+			<button class="form-control bg-success" id="submitBtn" type="button">추가</button>
 		</form>
 	</div>
 	
 	<script>
-	$(document).ready(function(){
+	$(document).ready(function(e){
 		$('#submitBtn').on('click',function(){
 			var name=$('input[name=name]').val().trim();
 			var url=$('input[name=url]').val().trim();
@@ -57,14 +57,18 @@
 				$.ajax({
 					type:'POST'
 					,url:'/lesson08/quiz01/add_favorite'
-					,dataType:'JSON'
-					,data:{"name":name,"url":url}
+					,data:{'name':name,'url':url}
 					,success:function(data){
 						alert('추가 성공!');
+						location.href='/lesson08/quiz01/favorite_list_view';
+						
 					}
 					,error: function(e){
-						alert('실패!');
+						alert('추가 실패! :::: \n e.staus :' + e.status);
 					}
+
+			
+					
 				});
 				
 			}else{
