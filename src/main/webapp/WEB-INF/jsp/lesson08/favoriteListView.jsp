@@ -15,13 +15,17 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="mt-3">${subject}</h1>
+		<div class="d-flex justify-content-between align-items-center mt-3">
+		<h1>${subject}</h1>
+		<button class="btn" onclick="location.href='/lesson08/quiz01/add_favorite_view'">추가하기</button>
+		</div>
 		<table class="table text-center">
 			<thead>
 				<tr>
 					<th>No.</th>
 					<th>이름</th>
 					<th>주소</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,12 +33,39 @@
 					<tr>
 						<td>${status.count}</td>
 						<td>${favorite.name}</td>
-						<td>${favorite.url}</td>
+						<td><a href="${favorite.url}" target="_blank">${favorite.url}</a></td>
+						<td><button type="button" name="delBtn" class=" btn btn-danger text-white" value="${favorite.id}">삭제</button>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-
+	<script>
+		$(document).ready(function(){
+			//1.jQuery Dynamic Event binding
+			//on('행위','지정자','이벤트') -- 동적으로 이벤트를 모두 할당하는 방법
+			$('td').on('click','button[name=delBtn]',function(e){
+				e.preventDefault();
+				let delId=$(this).attr('value');
+				
+				$.ajax({
+					type:'GET'
+					,data:{'id':delId}
+					,url:'/lesson08/quiz01/del_favorite'
+					,success:function(data){
+								if(data.result===true){
+									alert('삭제 완료');
+									location.href='/lesson08/quiz01/favorite_list_view';
+								}
+							 }
+					,error:function(e){
+						alert('삭제 실패'+e);
+					}
+				});
+				
+			});
+			
+		});
+	</script>
 </body>
 </html>
