@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#wrap{width:1000px; margin:auto;}
+
+.header{}
+.header .header-item:hover{text-decoration: none;}
+.header .nav-div{background-color:#e3871f;}
+.header .nav-bar{width:250px; text-align: center; font-weight: bold;}
+
+.section{}
+
+.footer{height:100px;}
