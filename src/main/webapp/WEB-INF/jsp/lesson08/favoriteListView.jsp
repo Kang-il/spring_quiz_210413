@@ -34,7 +34,10 @@
 						<td>${status.count}</td>
 						<td>${favorite.name}</td>
 						<td><a href="${favorite.url}" target="_blank">${favorite.url}</a></td>
-						<td><button type="button" name="delBtn" class=" btn btn-danger text-white" value="${favorite.id}">삭제</button>
+						<%--1방식 name속성과 value속성을 이용해 동적으로 삭제 버튼 방지 --%>
+						<td><button type="button" name="delBtn" class=" btn btn-danger text-white" value="${favorite.id}">삭제</button></td>
+						<%--2 data 이용해서 data를 임시저장 해놓기--%>
+						<td><button type="button" class="favorite-btn btn btn-danger text-white" data-favorite-id="${favorite.id}">삭제</button></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -64,6 +67,34 @@
 				});
 				
 			});
+			
+			
+			
+			//2.2 data 이용해서 data를 임시저장 해놓기
+			//  data- 뒤 부턴 우리가 이름을 정한다
+			//  스크립트 : $(this).data('-뒤 이름');
+			$('.favorite-btn').on('click',function(){
+				let favoriteId = $(this).data('favorite-id');
+				alert(favoriteId);
+				
+				$.ajax({
+					type:'POST'
+					,data:{'id':favoriteId}
+					,url:'/lesson08/quiz01/del_favorite'
+					,success:function(data){
+								if(data.result===true){
+									alert('삭제 완료');
+									location.href='/lesson08/quiz01/favorite_list_view';
+								}
+							 }
+					,error:function(e){
+						alert('삭제 실패'+e);
+					}
+				});
+				
+				
+			});
+			
 			
 		});
 	</script>

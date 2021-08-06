@@ -8,5 +8,21 @@
 .header .nav-bar{width:250px; text-align: center; font-weight: bold;}
 
 .section{}
+.section .home-items-box{height:250px;}
 
+.section .home-items-box .home-item1{
+									width:300px; 
+									background-color: #b1520f; 
+									font-size: 50px; 
+									color:white; 
+									font-weight: lighter;}
+									
+.section .home-items-box .home-item2{width:400px; background-color: #e3871f;}
+.section .home-items-box .home-item3{
+									width:300px; 
+									background-color: #b1520f;
+									font-size: 25px; 
+									color:white; 
+									font-weight: bold;}
+.section .form-section{width:350px;}
 .footer{height:100px;}

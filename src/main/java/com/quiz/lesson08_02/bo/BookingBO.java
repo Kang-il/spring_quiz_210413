@@ -20,4 +20,12 @@ public class BookingBO {
 	public int deleteBookingById(int id) {
 		return bookingDAO.deleteBookingById(id);
 	}
+	
+	public Booking getBookingByNameAndPhoneNumber(String name,String phoneNumber) {
+		return bookingDAO.selectBookingByNameAndPhoneNumber(name, phoneNumber);
+	}
+	
+	public void insertBooking(Booking booking) {
+		bookingDAO.insertBooking(booking);
+	}
 }
